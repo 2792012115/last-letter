@@ -1,7 +1,7 @@
 App({
   globalData: {
-    // 改成你部署后的后端地址
-    apiBase: 'http://localhost:5000',
+    // API 后端地址
+    apiBase: 'https://web-production-71583a.up.railway.app',
     relationships: {},
     selectedRel: null,
     recipientName: '',
