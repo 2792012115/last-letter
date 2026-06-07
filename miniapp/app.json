@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/questions/questions",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "如果明天不在了",
+    "navigationBarBackgroundColor": "#faf8f5",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#faf8f5"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,44 @@
+<!-- 提问回答页 -->
+<view class="container">
+  <view class="header" style="padding-top:40rpx;padding-bottom:32rpx;">
+    <text style="font-size:56rpx;">{{icon}}</text>
+    <text style="font-size:30rpx;color:#8b5e3c;display:block;margin-top:12rpx;">
+      {{label}} → {{recipientName}}
+    </text>
+  </view>
+
+  <view class="card">
+    <view class="steps">
+      <view class="step done">
+        <text class="step-num">✓</text>
+        <text>选择对象</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step active">
+        <text class="step-num">2</text>
+        <text>回答问题</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step">
+        <text class="step-num">3</text>
+        <text>收信</text>
+      </view>
+    </view>
+
+    <view wx:for="{{questions}}" wx:key="index" class="q-block">
+      <view class="q-label">第 {{index + 1}}/{{questions.length}} 问</view>
+      <view class="q-text">💭 {{item}}</view>
+      <textarea
+        class="q-input"
+        placeholder="写下你的回答..."
+        data-index="{{index}}"
+        bindinput="onAnswerInput"
+        value="{{answers[index] || ''}}"
+      />
+    </view>
+
+    <button class="btn-primary" bindtap="submitAnswers" loading="{{submitting}}" disabled="{{submitting}}">
+      {{submitting ? '正在书写...' : '写好了，生成我的信 💌'}}
+    </button>
+  </view>
+</view>

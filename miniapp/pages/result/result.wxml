@@ -1,0 +1,41 @@
+<!-- 信件展示页 -->
+<view class="container">
+  <view class="header" style="padding-top:40rpx;padding-bottom:32rpx;">
+    <text style="font-size:40rpx;">📜</text>
+    <text style="font-size:30rpx;color:#8b5e3c;display:block;margin-top:12rpx;">你的信</text>
+  </view>
+
+  <view class="card">
+    <view class="steps">
+      <view class="step done">
+        <text class="step-num">✓</text>
+        <text>选择对象</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step done">
+        <text class="step-num">✓</text>
+        <text>回答问题</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step active">
+        <text class="step-num">3</text>
+        <text>收信</text>
+      </view>
+    </view>
+
+    <view class="letter-paper">{{letter}}</view>
+
+    <view class="keywords" wx:if="{{keywords.length > 0}}">
+      <text wx:for="{{keywords}}" wx:key="*this">{{item}}</text>
+    </view>
+
+    <view class="watermark">
+      「如果明天不在了」— 把没说出口的话，留给该听的人
+    </view>
+  </view>
+
+  <view class="btn-row">
+    <button class="btn-secondary" bindtap="goHome">再写一封</button>
+    <button class="btn-primary" bindtap="shareLetter">📋 复制分享</button>
+  </view>
+</view>

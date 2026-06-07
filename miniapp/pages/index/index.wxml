@@ -1,0 +1,55 @@
+<!-- 首页：选择收信对象 -->
+<view class="container">
+  <view class="header">
+    <text class="icon">✉️</text>
+    <text class="title">如果明天不在了</text>
+    <text class="subtitle">你想对谁说些什么？</text>
+  </view>
+
+  <view class="card">
+    <view class="steps">
+      <view class="step active">
+        <text class="step-num">1</text>
+        <text>选择对象</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step">
+        <text class="step-num">2</text>
+        <text>回答问题</text>
+      </view>
+      <text class="arrow">→</text>
+      <view class="step">
+        <text class="step-num">3</text>
+        <text>收信</text>
+      </view>
+    </view>
+
+    <view style="font-size:34rpx;font-weight:400;color:#8b5e3c;margin-bottom:32rpx;">
+      这封信写给谁？
+    </view>
+
+    <view class="rel-grid">
+      <view
+        wx:for="{{rels}}"
+        wx:key="key"
+        class="rel-btn {{selectedRel === item.key ? 'active' : ''}}"
+        data-key="{{item.key}}"
+        bindtap="selectRel"
+      >
+        <text class="rel-icon">{{item.icon}}</text>
+        <text>{{item.label}}</text>
+      </view>
+    </view>
+
+    <input
+      class="input-box"
+      placeholder="TA 的名字/称呼（选填）"
+      value="{{recipientName}}"
+      bindinput="onNameInput"
+    />
+
+    <button class="btn-primary" bindtap="goNext">
+      开始写信 ✍️
+    </button>
+  </view>
+</view>
