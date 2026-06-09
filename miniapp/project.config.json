@@ -34,12 +34,13 @@
     "condition": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.6.0",
-  "appid": "your-appid-here",
+  "libVersion": "3.16.1",
+  "appid": "wx07e685879844fafa",
   "projectname": "last-letter",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "simulatorPluginLibVersion": {}
 }

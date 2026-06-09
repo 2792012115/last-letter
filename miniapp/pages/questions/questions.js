@@ -68,6 +68,7 @@ Page({
     wx.request({
       url: app.globalData.apiBase + '/api/generate',
       method: 'POST',
+      header: { 'Content-Type': 'application/json' },
       data: {
         relationship: app.globalData.selectedRel,
         recipient_name: app.globalData.recipientName,
@@ -84,9 +85,9 @@ Page({
           wx.showToast({ title: '生成失败，请重试', icon: 'none' });
         }
       },
-      fail: () => {
+      fail: (err) => {
         this.setData({ submitting: false });
-        wx.showToast({ title: '网络错误，请检查后端是否启动', icon: 'none' });
+        wx.showToast({ title: '网络错误：' + (err.errMsg || ''), icon: 'none' });
       }
     });
   },

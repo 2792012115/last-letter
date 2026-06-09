@@ -13,13 +13,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ============================================================
-# 配置
+# 配置（必须通过环境变量设置，无默认值）
 # ============================================================
 CLIENT = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY", "sk-placeholder"),
-    base_url=os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"),
+    api_key=os.environ["OPENAI_API_KEY"],
+    base_url=os.environ["OPENAI_BASE_URL"],
 )
-MODEL = os.getenv("MODEL_NAME", "gpt-4o-mini")
+MODEL = os.environ.get("MODEL_NAME", "deepseek-chat")
 
 # ============================================================
 # 关系类型预设
